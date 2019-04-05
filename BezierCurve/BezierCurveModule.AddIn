@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Extensibility FileVersion="1">
+  <Addin>
+    <Configurations>
+      {5CB3D0DA-DBC8-46ae-A2A2-F1E2052F3BFF}</Configurations>
+      <Browsable>False</Browsable>
+      <FriendlyName>Модуль вписывания кривой Безье</FriendlyName>
+      <Description>Модуль вписывания кривой Безье в ломанную структурную линию.</Description>
+      <TargetPlaform Name="" Version="15.0"/>
+      <SortOrder>1000</SortOrder>
+      <Assembly Name="BezierCurve.dll"
+      FullClassName="BezierCurve.BezierCurvePluginHost" />
+    </Addin>
+</Extensibility>

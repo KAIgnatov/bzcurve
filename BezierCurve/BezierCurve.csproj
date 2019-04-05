@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0052016B-26C9-42A3-9546-4C228D10FB21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BezierCurve</RootNamespace>
+    <AssemblyName>BezierCurve</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BezierCurve.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topomatic.ApplicationPlatform, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.ApplicationPlatform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Topomatic.Cad.Foundation, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Topomatic.Cad.View, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.View.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Topomatic.Dwg, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Topomatic.Dwg.Layer, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.Layer.dll</HintPath>
+    </Reference>
+    <Reference Include="Topomatic.FoundationClasses, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.FoundationClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="Topomatic.Sfc, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Topomatic.Sfc.Layer, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.Layer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Topomatic.Stg, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Topomatic.Stg\15.0.28.7__e252492115b01327\Topomatic.Stg.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BezierCurveModule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BezierCurvePluginHost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BezierCurve.snk" />
+    <Content Include="BezierCurveModule.AddIn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BezierCurveModule.resx">
+      <DependentUpon>BezierCurveModule.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
