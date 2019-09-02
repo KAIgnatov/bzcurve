@@ -169,15 +169,38 @@ namespace BezierCurve
                     if (LF / LS > 10)
                         LF=LS;
 
+                    double Z;
 
                     double dy = LS * coef * Math.Cos(C1)*raznicaS;
                     double dx = LS * coef * Math.Sin(C1)*raznicaS;
+                    double dz = coef * (pointS.Vertex.Z - pointF.Vertex.Z)/1.01;
 
-                    var vectorFC1 = new Vector3D(pointF.Vertex.X + dx, pointF.Vertex.Y + dy, pointF.Vertex.Z);
+                   /* if (pointS.Vertex.Z > pointF.Vertex.Z)
+                    {
+                        Z = pointF.Vertex.Z;
+                    }
+                    else
+                    {
+                        Z = (pointF.Vertex.Z - pointS.Vertex.Z) * coef + pointF.Vertex.Z;
+                    }*/
+
+                    var vectorFC1 = new Vector3D(pointF.Vertex.X + dx, pointF.Vertex.Y + dy, pointF.Vertex.Z + dz);
 
                     dy = LF * coef * Math.Cos(C2)*raznicaF;
                     dx = LF * coef * Math.Sin(C2)*raznicaF;
-                    var vectorFC2 = new Vector3D(pointF.Vertex.X + dx, pointF.Vertex.Y + dy, pointF.Vertex.Z);
+                    dz = coef * (pointN.Vertex.Z - pointF.Vertex.Z)/1.01;
+
+
+                    /*if (pointN.Vertex.Z > pointF.Vertex.Z)
+                    {
+                        Z = pointF.Vertex.Z;
+                    }
+                    else
+                    {
+                        Z = (pointF.Vertex.Z - pointN.Vertex.Z) * coef + pointF.Vertex.Z;
+                    }*/
+
+                    var vectorFC2 = new Vector3D(pointF.Vertex.X + dx, pointF.Vertex.Y + dy, pointF.Vertex.Z + dz);
 
                     SurfacePoint pointFC1 = new SurfacePoint(vectorFC1);
                     SurfacePoint pointFC2 = new SurfacePoint(vectorFC2);
@@ -191,7 +214,8 @@ namespace BezierCurve
                         double C0 = C1 - 3.14 - gamma;
                         dy = LS * coef * Math.Cos(C0);
                         dx = LS * coef * Math.Sin(C0);
-                        var vectorSC0 = new Vector3D(pointS.Vertex.X + dx, pointS.Vertex.Y + dy, pointS.Vertex.Z);
+                        dz = coef * (pointF.Vertex.Z - pointS.Vertex.Z)/1.01;
+                        var vectorSC0 = new Vector3D(pointS.Vertex.X + dx, pointS.Vertex.Y + dy, pointS.Vertex.Z + dz);
                         SurfacePoint pointSC1 = new SurfacePoint(vectorSC0);
                         segments[0, 1] = pointSC1;
                     }
@@ -202,7 +226,8 @@ namespace BezierCurve
                         double C3 = C2 + 3.14 + gamma;
                         dy = LF * coef * Math.Cos(C3);
                         dx = LF * coef * Math.Sin(C3);
-                        var vectorNC3 = new Vector3D(pointN.Vertex.X + dx, pointN.Vertex.Y + dy, pointN.Vertex.Z);
+                        dz = coef * (pointF.Vertex.Z - pointN.Vertex.Z)/1.01;
+                        var vectorNC3 = new Vector3D(pointN.Vertex.X + dx, pointN.Vertex.Y + dy, pointN.Vertex.Z + dz);
                         SurfacePoint pointNC3 = new SurfacePoint(vectorNC3);
                         segments[i+1, 2] = pointNC3;
                         segments[i + 1, 3] = pointN.Clone();
@@ -286,25 +311,28 @@ namespace BezierCurve
                     }
 
                     SurfacePoint q = new SurfacePoint();
-                    SurfacePoint r = CastR(p, t, 3, 0).Clone();
+                    SurfacePoint r;
+                    r = CastR(p, t, 0, 0).Clone();
 
-                    var index = new Topomatic.Sfc.PointEditor(surface).Add(r);
-                    newline.Add(index);
+                    //int index;
+
+                    //index = new Topomatic.Sfc.PointEditor(surface).Add(r);
+                    newline.Add(surface.FindPoint(r.Vertex.Pos, 0.1) == -1 ? new Topomatic.Sfc.PointEditor(surface).Add(r) : surface.FindPoint(r.Vertex.Pos, 0.1)) ;
 
                     for (int k = 0; k < N; k++)
                     {
                         t += d;
-                        q = CastR(p, t, 3, 0).Clone();
+                        q = CastR(p, t, 3, 0).Clone();//было 0
                         r = q.Clone();
                         r.IsExtended = true;
                         r.IsDynamic = true;
-                        index = new Topomatic.Sfc.PointEditor(surface).Add(r);
-                        newline.Add(index);
+                        //index = new Topomatic.Sfc.PointEditor(surface).Add(r);
+                        newline.Add(surface.FindPoint(r.Vertex.Pos, 0.1) == -1 ? new Topomatic.Sfc.PointEditor(surface).Add(r) : surface.FindPoint(r.Vertex.Pos, 0.1));
                         
                     }
                 }
-                var ind = new Topomatic.Sfc.PointEditor(surface).Add(segments[segments.GetLength(0)-1,3]);
-                newline.Add(ind);
+                //var ind = new Topomatic.Sfc.PointEditor(surface).Add(segments[segments.GetLength(0)-1,3]);
+                newline.Add(surface.FindPoint(segments[segments.GetLength(0) - 1, 3].Vertex.Pos, 0.1) == -1 ? new Topomatic.Sfc.PointEditor(surface).Add(segments[segments.GetLength(0) - 1, 3]) : surface.FindPoint(segments[segments.GetLength(0) - 1, 3].Vertex.Pos, 0.1));
 
                 surface.StructureLines.Add(newline);
 
@@ -366,7 +394,7 @@ namespace BezierCurve
         SurfacePoint CastR(SurfacePoint[] p, double t, int n, int m)
         {
             if (n == 0)
-                return p[m];
+                return p[m].Clone();
             else
                 return Lin1(CastR(p, t, n - 1, m), CastR(p, t, n - 1, m + 1), t);
         }
