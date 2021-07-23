@@ -204,7 +204,7 @@ namespace BezierCurve
                         dx = LF * coef * Math.Sin(C3);
                         var vectorNC3 = new Vector3D(pointN.Vertex.X + dx, pointN.Vertex.Y + dy, pointN.Vertex.Z);
                         SurfacePoint pointNC3 = new SurfacePoint(vectorNC3);
-                        segments[i+1, 2] = pointNC3;
+                        segments[i + 1, 2] = pointNC3;
                         segments[i + 1, 3] = pointN.Clone();
                     }
 
@@ -286,12 +286,13 @@ namespace BezierCurve
                     }
 
                     SurfacePoint q = new SurfacePoint();
-                    SurfacePoint r = CastR(p, t, 3, 0).Clone();
+                    //SurfacePoint r = CastR(p, t, 3, 0).Clone();
+                    SurfacePoint r = segments[i, 0].Clone();
 
                     var index = new Topomatic.Sfc.PointEditor(surface).Add(r);
                     newline.Add(index);
 
-                    for (int k = 0; k < N; k++)
+                    for (int k = 0; k < N-1; k++)
                     {
                         t += d;
                         q = CastR(p, t, 3, 0).Clone();
@@ -310,7 +311,9 @@ namespace BezierCurve
 
                 for (int l = 0; l < line.Count; l++)
                 {
-                    line.Remove(new StructureLineNode(line[l].Index));
+                    var delpoint = new StructureLineNode(line[l].Index);
+                    line.Remove(delpoint);
+                    editor.Remove(delpoint.Index);
                 }
                 surface.StructureLines.Remove(line);
 
