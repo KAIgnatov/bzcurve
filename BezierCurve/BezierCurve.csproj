@@ -51,46 +51,49 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Topomatic.Alg">
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Alg.dll</HintPath>
+    </Reference>
     <Reference Include="Topomatic.ApplicationPlatform, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.ApplicationPlatform.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.ApplicationPlatform.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Topomatic.Cad.Foundation, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.Foundation.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.Foundation.dll</HintPath>
     </Reference>
     <Reference Include="Topomatic.Cad.View, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.View.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Cad.View.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Topomatic.Dwg, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Topomatic.Dwg.Layer, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.Layer.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Dwg.Layer.dll</HintPath>
     </Reference>
     <Reference Include="Topomatic.FoundationClasses, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.FoundationClasses.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.FoundationClasses.dll</HintPath>
     </Reference>
     <Reference Include="Topomatic.Sfc, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Topomatic.Sfc.Layer, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.Layer.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Sfc.Layer.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Topomatic.Smt, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files\Topomatic Robur Rail 15.0\Topomatic.Smt.dll</HintPath>
+      <HintPath>C:\Program Files\Topomatic Robur Rail 15.0\Topomatic.Smt.dll</HintPath>
     </Reference>
     <Reference Include="Topomatic.Stg, Version=15.0.28.7, Culture=neutral, PublicKeyToken=e252492115b01327, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
